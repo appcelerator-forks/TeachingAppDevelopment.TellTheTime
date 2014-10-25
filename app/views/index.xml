@@ -1,6 +1,5 @@
 <Alloy>
-	<Window>
-		<Label top="20">Tell The Time</Label>
-		<ImageView class="clockStyle" image="/clock_bg.png" />
+	<Window layout="vertical">
+		<View id=clock></View>
 	</Window>
 </Alloy>
