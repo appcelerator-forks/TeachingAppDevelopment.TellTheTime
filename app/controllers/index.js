@@ -11,20 +11,22 @@ function randomDate(start, end) {
 // EVENT HANDLERS
 
 
-function createClockView(date) {
+function createClockView(date, runflag) {
 	var d8 = date;
     var setClock = function(){
     	if(!d8){
-    		d8 = new Date();
+    		d8 = new Date(); // default to now
     	}
         var mm = d8.getMinutes();
         var hh = d8.getHours() % 12; // Modulus 12
         h.setTransform(Ti.UI.create2DMatrix().rotate(hh * 360 / 12));
         m.setTransform(Ti.UI.create2DMatrix().rotate(mm * 360 / 60));
+        if(!runflag) {setInterval(tick, 60000);} 
     };
-    var startClock = function(){
-    	setInterval(setClock, 60000);	
-    };                          
+    var tick = function(){
+    	d8 = new Date(d8.getTime() + 60000);
+    	setClock();
+    };                        
     var clockView = Ti.UI.createImageView({
         image:'/clock_bg.png',
         width:200,
@@ -55,9 +57,9 @@ function createClockView(date) {
 
 
 $.index.addEventListener("open", function(e){
-	$.clock1.add(createClockView(randomDate(new Date(2012, 0, 1), new Date())));
-	$.clock2.add(createClockView(randomDate(new Date(2012, 0, 1), new Date())));
-	$.clock3.add(createClockView(randomDate(new Date(2012, 0, 1), new Date())));
+	$.clock1.add(createClockView(randomDate(new Date(2012, 0, 1), new Date())), true);
+	$.clock2.add(createClockView(randomDate(new Date(2012, 0, 1), new Date())), true);
+	$.clock3.add(createClockView(randomDate(new Date(2012, 0, 1), new Date())), true);
 });
 
 
