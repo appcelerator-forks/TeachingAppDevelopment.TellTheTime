@@ -1,12 +1,10 @@
 "Window": {
-	backgroundColor: "blue",
+	
 	layout: "vertical"
 },
-".clockStyle" : {
-	width: "200",
-	height: "200"
-	//width: Titanium.UI.SIZE,
-	//height: Titanium.UI.SIZE	
+"View": {
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
 },
 
 "Label": {

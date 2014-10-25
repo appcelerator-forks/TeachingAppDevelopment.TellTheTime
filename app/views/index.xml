@@ -1,5 +1,7 @@
 <Alloy>
 	<Window layout="vertical">
-		<View id=clock></View>
+		<View id="clock1"></View>
+		<View id="clock2"></View>
+		<View id="clock3"></View>
 	</Window>
 </Alloy>
