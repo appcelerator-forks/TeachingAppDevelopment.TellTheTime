@@ -1,6 +1,13 @@
-".container": {
-	backgroundColor:"white"
-}
+"Window": {
+	backgroundColor: "blue",
+	layout: "vertical"
+},
+".clockStyle" : {
+	width: "200",
+	height: "200"
+	//width: Titanium.UI.SIZE,
+	//height: Titanium.UI.SIZE	
+},
 
 "Label": {
 	width: Ti.UI.SIZE,
@@ -8,8 +15,3 @@
 	color: "#000"
 }
 
-"#label": {
-	font: {
-		fontSize: 12
-	}
-}
