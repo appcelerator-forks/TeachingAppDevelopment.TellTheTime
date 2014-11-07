@@ -1,16 +1,13 @@
 
+/*
+ Not currently working on android
+ * */
+
 function randomDate(start, end) {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
-//randomDate(new Date(2012, 0, 1), new Date())
-
-
-
-
 // EVENT HANDLERS
-
-
 function createClockView(date, runflag) {
 	var d8 = date;
     var setClock = function(){
@@ -55,14 +52,10 @@ function createClockView(date, runflag) {
     return clockView;
 };
 
-
+// When the window opens we create 3 clocks
 $.index.addEventListener("open", function(e){
 	$.clock1.add(createClockView(randomDate(new Date(2012, 0, 1), new Date())), true);
 	$.clock2.add(createClockView(randomDate(new Date(2012, 0, 1), new Date())), true);
 	$.clock3.add(createClockView(randomDate(new Date(2012, 0, 1), new Date())), true);
 });
-
-
-
-
 $.index.open();
